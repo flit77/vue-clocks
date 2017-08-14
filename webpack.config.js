@@ -37,5 +37,8 @@ module.exports = {
         warnings: false
       }
     })
-  ]
+  ],
+  externals: {
+    moment: 'moment'
+  }
 };
