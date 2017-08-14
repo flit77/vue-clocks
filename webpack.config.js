@@ -49,10 +49,22 @@ module.exports = [
   merge(commonConfig, {
     entry: path.resolve(__dirname + '/src/plugin.js'),
     output: {
-      filename: 'vue-clock.min.js'
+      filename: 'vue-clock.min.js',
+      libraryTarget: 'window',
+      library: 'VueClock'
     }
   }),
 
   // Config 2: For Node-based development environments
-  merge(commonConfig, {})
+  merge(commonConfig, {
+    entry: path.resolve(__dirname + '/src/Clock.vue'),
+    output: {
+      filename: 'vue-clock.js',
+      libraryTarget: 'umd',
+
+      // These options are useful if the user wants to load the module with AMD
+      library: 'vue-clock',
+      umdNamedDefine: true
+    }
+  })
 ];
