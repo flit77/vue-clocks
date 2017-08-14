@@ -46,7 +46,12 @@ var commonConfig = {
 
 module.exports = [
   // Config 1: For browser environment
-  merge(commonConfig, {}),
+  merge(commonConfig, {
+    entry: path.resolve(__dirname + '/src/plugin.js'),
+    output: {
+      filename: 'vue-clock.min.js'
+    }
+  }),
 
   // Config 2: For Node-based development environments
   merge(commonConfig, {})
