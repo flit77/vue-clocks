@@ -12,16 +12,19 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel',
+        query: {
+          presets: ['es2015']
+        },
         include: __dirname,
         exclude: /node_modules/
       },
       {
         test: /\.vue$/,
-        loader: 'vue'
+        loader: 'vue-loader'
       },
       {
         test: /\.css$/,
-        loader: 'style!less!css'
+        loader: 'style-loader!less-loader!css-loader'
       }
     ]
   },
