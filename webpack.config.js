@@ -1,7 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
+const merge = require('webpack-merge');
 
-module.exports = {
+var commonConfig = {
   entry: path.resolve(__dirname + '/src/Clock.vue'),
   output: {
     path: path.resolve(__dirname + '/dist/'),
@@ -42,3 +43,11 @@ module.exports = {
     moment: 'moment'
   }
 };
+
+module.exports = [
+  // Config 1: For browser environment
+  merge(commonConfig, {}),
+
+  // Config 2: For Node-based development environments
+  merge(commonConfig, {})
+];
