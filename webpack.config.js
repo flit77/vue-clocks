@@ -29,6 +29,9 @@ var commonConfig = {
       }
     ]
   },
+  externals: {
+    moment: 'moment'
+  },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,
@@ -38,10 +41,7 @@ var commonConfig = {
         warnings: false
       }
     })
-  ],
-  externals: {
-    moment: 'moment'
-  }
+  ]
 };
 
 module.exports = [
