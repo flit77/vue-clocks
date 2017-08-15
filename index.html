@@ -9,17 +9,19 @@
 <body>
   <h1>Test for vue clock</h1>
   <div id="root">
+    <p>{{message}}</p>
     <vue-clock></vue-clock>
   </div>
-  <script>
-    new Vue({
-      el: '#root'
-    });
-  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
   <script src="./dist/vue-clock.min.js"></script>
   <script>
     Vue.use(VueClock);
+    var demo = new Vue({
+      el: '#root',
+      data: {
+        message: 'Hello Vue.js!'
+      }
+    });
   </script>
 </body>
 
